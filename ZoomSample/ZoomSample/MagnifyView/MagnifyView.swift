@@ -1,11 +1,9 @@
-//
 //  MagnifyView.swift
-//  MagnifyingGlass
+//  ZoomSample
 //
-//  Created by Damidu Dasanayake on 6/29/18.
-//  Copyright © 2018 Damidu Dasanayake. All rights reserved.
+//  Created by jungwook on 2019/11/18.
+//  Copyright © 2019 jungwook. All rights reserved.
 //
-
 import UIKit
 
 enum MagnifyType : String{
@@ -34,7 +32,6 @@ class MagnifyView: UIView {
     override init(frame: CGRect)
     {
         super.init(frame: frame)
-      
         commonInit()
     }
     
