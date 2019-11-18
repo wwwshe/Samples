@@ -18,6 +18,7 @@ class MagnifyView: UIView {
     var magnifyView: UIView!
     var touchPoint: CGPoint!
     var type = MagnifyType.Rect
+    @IBInspectable var scale : CGFloat = 1.5
     
     @available(*, unavailable, message: "This property is reserved for Interface Builder. Use 'shape' instead.")
     @IBInspectable var shapeName: String? {
@@ -66,7 +67,7 @@ class MagnifyView: UIView {
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         context!.translateBy(x: 1 * (self.frame.size.width * 0.5), y: 1 * (self.frame.size.height * 0.5))
-        context!.scaleBy(x: 1.5, y: 1.5) // 1.5 is the zoom scale
+        context!.scaleBy(x: scale, y: scale) // 1.5 is the zoom scale
         context!.translateBy(x: -1 * (touchPoint.x), y: -1 * (touchPoint.y))
         self.magnifyView.layer.render(in: context!)
     }
