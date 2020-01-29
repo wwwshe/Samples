@@ -11,17 +11,18 @@ import UIKit
 class ViewController: ViewControllerHelper {
 
     @IBOutlet weak var mainView: UIView!
+    var isZoom = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+      
     }
 
 
     @IBAction func zoomAction(_ sender: Any) {
-        let controller = getViewController(target: ZoomViewController.self)
-        controller.image = self.mainView.screenshot()
+        let controller = getViewController(target: ZoomSnapViewController.self)
+        controller.snapView = self.mainView.snapshotView(afterScreenUpdates: true)
         self.navigationController?.pushViewController(controller, animated: true)
-     
     }
 }
 

@@ -1,0 +1,6 @@
+framework module Pods_ZoomSample_ZoomSampleUITests {
+  umbrella header "Pods-ZoomSample-ZoomSampleUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -8,39 +8,69 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
     private var magnifyView: MagnifyView?
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var zoomImage: UIImageView!
+    
+    var isScrollViewHidden = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+        scrollViewSetting()
+    }
+    func scrollViewSetting(){
+          self.scrollView.alwaysBounceVertical = false
+          self.scrollView.alwaysBounceHorizontal = false
+          
+          self.scrollView.minimumZoomScale = 1.0
+          self.scrollView.maximumZoomScale = 5.0
+          self.scrollView.delegate = self
+      }
+  
+    @IBAction func testAction(_ sender: Any) {
+       
+        isScrollViewHidden = !isScrollViewHidden
+        
+        if isScrollViewHidden {
+            let image = self.mainView.screenshot()
+            zoomImage.image = image
+            
+    
+        }
+        mainView.isHidden = isScrollViewHidden
+        scrollView.isHidden = !isScrollViewHidden
         
     }
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let point = touches.first?.location(in: self.view)
-        if magnifyView == nil
-        {
-            magnifyView = MagnifyView.init(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-            magnifyView?.magnifyView = self.view
-            magnifyView?.setTouchPoint(pt: point!)
-            self.view.addSubview(magnifyView!)
+}
+
+extension ViewController : UIScrollViewDelegate{
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+
+        return zoomImage
+    }
+}
+
+
+
+extension UIView {
+    func screenshot() -> UIImage {
+        if #available(iOS 10.0, *) {
+            let format = UIGraphicsImageRendererFormat()
+            return UIGraphicsImageRenderer(size: bounds.size, format: format).image { _ in
+                drawHierarchy(in: CGRect(origin: .zero, size: bounds.size), afterScreenUpdates: true)
+            }
+        } else {
+            UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+            drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+            let image = UIGraphicsGetImageFromCurrentImageContext() ?? UIImage()
+            UIGraphicsEndImageContext()
+            return image
         }
     }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if magnifyView != nil
-        {
-            magnifyView?.removeFromSuperview()
-            magnifyView = nil
-        }
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let point = touches.first?.location(in: self.view)
-        magnifyView?.setTouchPoint(pt: point!)
-        magnifyView?.setNeedsDisplay()
-    }
-    
 }

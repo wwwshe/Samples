@@ -146,6 +146,52 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
+        <!--Zoom Snap View Controller-->
+        <scene sceneID="WiP-Qr-l3c">
+            <objects>
+                <viewController storyboardIdentifier="ZoomSnapViewController" id="xtP-y7-FHU" customClass="ZoomSnapViewController" customModule="PinchSnapShotSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6pT-h5-jPg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wR5-V1-l0U">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y98-16-ACw">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="y98-16-ACw" firstAttribute="top" secondItem="dpv-HG-9sA" secondAttribute="top" id="8IF-yO-9zD"/>
+                                    <constraint firstItem="y98-16-ACw" firstAttribute="leading" secondItem="dpv-HG-9sA" secondAttribute="leading" id="90b-47-ztC"/>
+                                    <constraint firstItem="y98-16-ACw" firstAttribute="trailing" secondItem="dpv-HG-9sA" secondAttribute="trailing" id="9JU-39-sSY"/>
+                                    <constraint firstItem="y98-16-ACw" firstAttribute="centerX" secondItem="wR5-V1-l0U" secondAttribute="centerX" id="Jyo-Q2-O1z"/>
+                                    <constraint firstItem="y98-16-ACw" firstAttribute="bottom" secondItem="dpv-HG-9sA" secondAttribute="bottom" id="eEJ-LQ-3gk"/>
+                                    <constraint firstItem="y98-16-ACw" firstAttribute="centerY" secondItem="wR5-V1-l0U" secondAttribute="centerY" id="taM-Ps-3aY"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="dpv-HG-9sA"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ssJ-c4-LBa"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wR5-V1-l0U" firstAttribute="top" secondItem="ObA-Xz-Djl" secondAttribute="top" id="0SR-2G-JUJ"/>
+                            <constraint firstItem="ObA-Xz-Djl" firstAttribute="bottom" secondItem="wR5-V1-l0U" secondAttribute="bottom" id="7Ey-fT-N4w"/>
+                            <constraint firstItem="ObA-Xz-Djl" firstAttribute="trailing" secondItem="wR5-V1-l0U" secondAttribute="trailing" id="Zz8-hc-fvh"/>
+                            <constraint firstItem="wR5-V1-l0U" firstAttribute="leading" secondItem="ObA-Xz-Djl" secondAttribute="leading" id="yLC-hc-JZK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ObA-Xz-Djl"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="wR5-V1-l0U" id="JPb-UZ-h5v"/>
+                        <outlet property="snapMainView" destination="y98-16-ACw" id="mbR-aX-yUT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZTD-g8-q5J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1704" y="150"/>
+        </scene>
     </scenes>
     <resources>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>

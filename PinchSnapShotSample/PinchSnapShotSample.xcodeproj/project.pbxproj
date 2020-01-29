@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		122F43C823879EB700A6C8DF /* ZoomSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122F43C723879EB600A6C8DF /* ZoomSnapViewController.swift */; };
 		1273801E2383B3B600A1DCEF /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273801D2383B3B600A1DCEF /* ZoomViewController.swift */; };
 		127380202383B43E00A1DCEF /* ViewControllerLoadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273801F2383B43E00A1DCEF /* ViewControllerLoadHelper.swift */; };
 		127897BD2383B2FB003A9661 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127897BC2383B2FB003A9661 /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		122F43C723879EB600A6C8DF /* ZoomSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomSnapViewController.swift; sourceTree = "<group>"; };
 		1273801D2383B3B600A1DCEF /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 		1273801F2383B43E00A1DCEF /* ViewControllerLoadHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerLoadHelper.swift; sourceTree = "<group>"; };
 		127897B92383B2FB003A9661 /* PinchSnapShotSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinchSnapShotSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 				127897C82383B2FC003A9661 /* Info.plist */,
 				1273801F2383B43E00A1DCEF /* ViewControllerLoadHelper.swift */,
 				1273801D2383B3B600A1DCEF /* ZoomViewController.swift */,
+				122F43C723879EB600A6C8DF /* ZoomSnapViewController.swift */,
 			);
 			path = PinchSnapShotSample;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				127380202383B43E00A1DCEF /* ViewControllerLoadHelper.swift in Sources */,
+				122F43C823879EB700A6C8DF /* ZoomSnapViewController.swift in Sources */,
 				127897BF2383B2FB003A9661 /* ViewController.swift in Sources */,
 				1273801E2383B3B600A1DCEF /* ZoomViewController.swift in Sources */,
 				127897BD2383B2FB003A9661 /* AppDelegate.swift in Sources */,

@@ -27,6 +27,7 @@ class ZoomViewController: ViewControllerHelper {
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 5.0
         self.scrollView.delegate = self
+        print(scrollView.contentSize)
     }
 }
 
